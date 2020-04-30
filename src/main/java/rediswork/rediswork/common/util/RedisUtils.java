@@ -15,6 +15,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Redis工具类
+ * @author liutf
+ * @date 2020-04-18
  */
 @Component
 public class RedisUtils {
@@ -657,5 +659,14 @@ public class RedisUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 删除指定的key值
+     * @param key
+     * @return
+     */
+    public static boolean delete(String key){
+        return redisTemplate.delete(key);
     }
 }
